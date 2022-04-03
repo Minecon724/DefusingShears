@@ -2,3 +2,4 @@ name: DefusingShears
 main: org.inventivetalent.defusingshears.DefusingShears
 author: inventivetalent
 version: ${project.version}
+api-version: 1.13
