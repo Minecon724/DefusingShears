@@ -28,6 +28,7 @@ public class DefusingShears extends JavaPlugin implements Listener {
 
 		saveDefaultConfig();
 		RADIUS = getConfig().getDouble("radius");
+		MESSAGE = ChatColor.translateAlternateColorCodes('&', getConfig().getString("message"));
 	}
 
 	@EventHandler(priority = EventPriority.MONITOR)
@@ -63,7 +64,7 @@ public class DefusingShears extends JavaPlugin implements Listener {
 			if (entity.getType() == EntityType.PRIMED_TNT) {
 				if (!entity.hasMetadata("DEFUSED")) {
 					entity.setMetadata("DEFUSED", new FixedMetadataValue(this, player));
-					player.sendMessage("§aYou defused the TNT!");
+					player.sendMessage(MESSAGE);
 
 					player.getWorld().playSound(entity.getLocation(), Sound.BLOCK_LEVER_CLICK/*10*/, 0.25f, 0.5f);
 					player.getWorld().spawnParticle(Particle.SMOKE_NORMAL, entity.getLocation().add(0.0, 0.5, 0.0), 20, 0.01f, 0.1f, 0.01f, 0.1f);
