@@ -1,2 +1,4 @@
 #Radius in which to remove tnt
 radius: 2.0
+#Message when defused
+message: '&2You have defused the tnt!'
